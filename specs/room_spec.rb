@@ -49,12 +49,20 @@ class RoomTest < MiniTest::Test
     @room.remove_song(@song2)
     assert_equal(2, @tracklist.length())
   end
-  #  CHECK ROOM IS NOT AT CAPACITY
+  #  CHECK ROOM IS -NOT- AT CAPACITY
+  def test_room_at_capacity__return_false
+    @room.add_guest_to_room(@guest1) #adding guest to room
+    assert_equal(false, @room.room_at_capacity?()) #at capacity false(i.e no)
+  end
+  # CHECK ROOM -IS- AT CAPACITY
   def test_room_at_capacity__return_true
     @room.add_guest_to_room(@guest1) #adding guest to room
-    assert_equal(true, @room.room_at_capacity?()) #at capacity yes/no
+    @room.add_guest_to_room(@guest1) #adding guest to room
+    @room.add_guest_to_room(@guest1) #adding guest to room
+    @room.add_guest_to_room(@guest1) #adding guest to room
+    @room.add_guest_to_room(@guest1) #adding guest to room
+    assert_equal(true, @room.room_at_capacity?()) #at capacity true(i.e yes)
   end
-
 
 
 

@@ -31,7 +31,7 @@ class Room
   end
   # ROOM AT CAPACITY YES/NO
   def room_at_capacity?()
-    return @guests_in_room >= 5
+    return @guests_in_room.length() >= 5
   end
 
 
