@@ -42,18 +42,14 @@ class Room
   def receive_entry_fee(amount)
     @till_balance += amount
   end
-
-
-
-
-
-  def enter_room(amount)
-    return if sufficient_funds_for_entry?(@room)
-
-    guest.pay_for_entry(amount)
-    @room.receive_entry_fee(amount)
-
-  end
+  # GUEST ENTERING ROOM
+  # def enter_room(amount)
+  #   return if sufficient_funds_for_entry?(@room)
+  #
+  #   guest.pay_for_entry(amount)
+  #   @room.receive_entry_fee(amount)
+  #   guest.add_guest_to_room
+  # end
 
 
 

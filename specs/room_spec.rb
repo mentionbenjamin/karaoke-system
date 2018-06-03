@@ -68,15 +68,16 @@ class RoomTest < MiniTest::Test
     @room.receive_entry_fee(10)
     assert_equal(110, @room.till_balance())
   end
-  # GUEST ENTERING ROOM HAVING PAID
-  def test_enter_room
-    
-  end
-
-
-
-
-
+  # GUEST ENTERING ROOM
+  # def test_enter_room
+  #   @guest1.pay_for_entry(@room)
+  #   @room.receive_entry_fee(10)
+  #   @room.add_guest_to_room(@guest1)
+  #   @room.enter_room(@guest1)
+  #
+  #   assert_equal(20, @guest1.wallet_balance())
+  #   assert_equal(110, @room.till_balance())
+  # end
 
 
 

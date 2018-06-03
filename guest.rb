@@ -25,16 +25,10 @@ class Guest
 
 
 
-    # def serve(customer, drink)
-    #   return if customer_too_young?(customer)
-    #   return if customer_too_drunk?(customer)
-    #   return if !@drinks.include?(drink)
-    #   return if check_stock(drink) == 0
-    #
-    #   customer.buy_drink(drink)
-    #   @till += drink.price()
-    #   @drinks[drink] -= 1
-    # end
+
+
+
+
 
 
 
