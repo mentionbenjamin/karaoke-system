@@ -45,15 +45,15 @@ class Room
 
 
 
-  #
-  #
-  # def enter_room(guest)
-  #   return if sufficient_funds_for_entry?(@room)
-  #
-  #   guest.pay_for_entry(amount)
-  #   self.
-  #
-  # end
+
+
+  def enter_room(amount)
+    return if sufficient_funds_for_entry?(@room)
+
+    guest.pay_for_entry(amount)
+    @room.receive_entry_fee(amount)
+
+  end
 
 
 

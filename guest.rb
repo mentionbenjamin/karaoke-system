@@ -23,15 +23,6 @@ class Guest
 
 
 
-  # def enter_room
-  #   return if sufficient_funds_for_entry?(room)
-  #
-  #   @wallet_balance -= room.entry_fee
-  #
-  # end
-
-
-
 
 
     # def serve(customer, drink)
