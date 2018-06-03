@@ -10,7 +10,7 @@ class GuestTest < MiniTest::Test
     @song1 = Song.new("Cher - Believe")
     @song2 = Song.new("Diana Ross - It's My House")
     @song3 = Song.new("Whitney Housten - How Will I Know")
-    @song4 = Song.new("Come Fly With Me - Frank Sinatra")
+    @song4 = Song.new("Frank Sinatra - Come Fly With Me")
     @tracklist = [@song1, @song2, @song3]
 
     @guest1 = Guest.new("Ben", 30)
@@ -43,8 +43,8 @@ class GuestTest < MiniTest::Test
   end
 
 
-  # def test_guest_can_enter_room
-  #   @guest1.sufficient_funds_for_entry?(@room)
+  # def test_can_guest_enter_room
+  #
   #   @guest1.pay_for_entry()
   #   assert_equal(20, @guest1.wallet_balance())
   # end

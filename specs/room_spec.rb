@@ -51,20 +51,25 @@ class RoomTest < MiniTest::Test
   end
   #  CHECK ROOM IS -NOT- AT CAPACITY
   def test_room_at_capacity__return_false_you_may_enter
-    @room.add_guest_to_room(@guest1) #adding guest to room
+    @room.add_guest_to_room(@guest1)
     assert_equal("Come on in", @room.room_at_capacity())
   end
   # CHECK ROOM -IS- AT CAPACITY
   def test_room_at_capacity__return_true_no_entry
-    @room.add_guest_to_room(@guest1) #adding guest to room
-    @room.add_guest_to_room(@guest1) #adding guest to room
-    @room.add_guest_to_room(@guest1) #adding guest to room
-    @room.add_guest_to_room(@guest1) #adding guest to room
-    @room.add_guest_to_room(@guest1) #adding guest to room
+    @room.add_guest_to_room(@guest1)
+    @room.add_guest_to_room(@guest1)
+    @room.add_guest_to_room(@guest1)
+    @room.add_guest_to_room(@guest1)
+    @room.add_guest_to_room(@guest1)
     assert_equal("Sorry, this room is full", @room.room_at_capacity())
   end
+  # RECEIVE ENTRY ENTRY FEE
+  def test_receive_entry_fee
+    @room.receive_entry_fee(10)
+    assert_equal(110, @room.till_balance())
+  end
 
-  
+
 
 
 end

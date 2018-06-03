@@ -38,6 +38,22 @@ class Room
       return "Come on in"
     end
   end
+  # RECEIVE ENTRY FEE
+  def receive_entry_fee(amount)
+    @till_balance += amount
+  end
+
+
+
+  #
+  #
+  # def enter_room(guest)
+  #   return if sufficient_funds_for_entry?(@room)
+  #
+  #   guest.pay_for_entry(amount)
+  #   self.
+  #
+  # end
 
 
 
