@@ -1,10 +1,11 @@
 class Room
 
-  attr_reader(:name, :till_balance, :tracklist, :capacity, :guests_in_room)
+  attr_reader(:name, :till_balance, :entry_fee, :tracklist, :capacity, :guests_in_room)
 
-  def initialize(name, till_balance, tracklist, capacity)
+  def initialize(name, till_balance, entry_fee, tracklist, capacity)
     @name = name
     @till_balance = till_balance
+    @entry_fee = entry_fee
     @tracklist = tracklist
     @capacity = capacity
     @guests_in_room = []
@@ -30,8 +31,12 @@ class Room
     @tracklist.delete(song)
   end
   # ROOM AT CAPACITY YES/NO
-  def room_at_capacity?()
-    return @guests_in_room.length() >= 5
+  def room_at_capacity()
+    if @guests_in_room.length() >= 5
+      return "Sorry, this room is full"
+    else
+      return "Come on in"
+    end
   end
 
 

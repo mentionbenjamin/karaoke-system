@@ -1,7 +1,7 @@
 require("minitest/autorun")
 require_relative("../room.rb")
 require_relative("../songs.rb")
-require_relative("../guests.rb")
+require_relative("../guest.rb")
 
 
 class RoomTest < MiniTest::Test
@@ -15,9 +15,9 @@ class RoomTest < MiniTest::Test
 
     @guest1 = Guest.new("Ben", 30)
     @guest2 = Guest.new("Daniel", 20)
-    @guest3 = Guest.new("James", 40)
+    @guest3 = Guest.new("James", 5)
 
-    @room = Room.new("Pop Karaoke", 100, @tracklist, 3)
+    @room = Room.new("Pop Karaoke", 100, 10, @tracklist, 3)
   end
 
   # CHECK ROOM NAME
@@ -50,26 +50,21 @@ class RoomTest < MiniTest::Test
     assert_equal(2, @tracklist.length())
   end
   #  CHECK ROOM IS -NOT- AT CAPACITY
-  def test_room_at_capacity__return_false
+  def test_room_at_capacity__return_false_you_may_enter
     @room.add_guest_to_room(@guest1) #adding guest to room
-    assert_equal(false, @room.room_at_capacity?()) #at capacity false(i.e no)
+    assert_equal("Come on in", @room.room_at_capacity())
   end
   # CHECK ROOM -IS- AT CAPACITY
-  def test_room_at_capacity__return_true
+  def test_room_at_capacity__return_true_no_entry
     @room.add_guest_to_room(@guest1) #adding guest to room
     @room.add_guest_to_room(@guest1) #adding guest to room
     @room.add_guest_to_room(@guest1) #adding guest to room
     @room.add_guest_to_room(@guest1) #adding guest to room
     @room.add_guest_to_room(@guest1) #adding guest to room
-    assert_equal(true, @room.room_at_capacity?()) #at capacity true(i.e yes)
+    assert_equal("Sorry, this room is full", @room.room_at_capacity())
   end
 
-
-
-  def customer_too_drunk?(customer)
-    return customer.drunkenness >= 50
-  end
-
+  
 
 
 end
