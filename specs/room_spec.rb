@@ -13,9 +13,9 @@ class RoomTest < MiniTest::Test
     @song4 = Song.new("Come Fly With Me - Frank Sinatra")
     @tracklist = [@song1, @song2, @song3]
 
-    @guest1 = Guest.new("Ben", 30)
-    @guest2 = Guest.new("Daniel", 20)
-    @guest3 = Guest.new("James", 5)
+    @guest1 = Guest.new("Ben", 30, @song1)
+    @guest2 = Guest.new("Daniel", 20, @song2)
+    @guest3 = Guest.new("James", 5, @song3)
 
     @room = Room.new("Pop Karaoke", 100, 10, @tracklist, 3)
   end
@@ -80,6 +80,10 @@ class RoomTest < MiniTest::Test
   # end
 
 
+  def test_does_playlist_play_favourite_song
+    @room.add_song(@song1)
+    assert_equal(true, @room.does_playlist_play_favourite_song(@song1))
+  end
 
 
 

@@ -51,7 +51,9 @@ class Room
   #   guest.add_guest_to_room
   # end
 
-
+  def does_playlist_play_favourite_song(song)
+    @tracklist.include?(song)
+  end
 
 
 

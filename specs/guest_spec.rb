@@ -13,9 +13,9 @@ class GuestTest < MiniTest::Test
     @song4 = Song.new("Frank Sinatra - Come Fly With Me")
     @tracklist = [@song1, @song2, @song3]
 
-    @guest1 = Guest.new("Ben", 30)
-    @guest2 = Guest.new("Daniel", 20)
-    @guest3 = Guest.new("James", 5)
+    @guest1 = Guest.new("Ben", 30, @song1)
+    @guest2 = Guest.new("Daniel", 20, @song2)
+    @guest3 = Guest.new("James", 5, @song3)
 
     @room = Room.new("Pop Karaoke", 100, 10, @tracklist, 3)
   end
